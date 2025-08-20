@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matia Landry — Portfolio</title>
+  <meta name="description" content="Portfolio of Matia Landry: projects, experience, and contact." />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121823;
+      --text: #e6eef8;
+      --muted: #a6b3c2;
+      --accent: #6cc3ff;
+      --accent-2: #9bffd6;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(108,195,255,0.12), transparent 60%),
+              radial-gradient(800px 500px at 10% 10%, rgba(155,255,214,0.15), transparent 55%), var(--bg); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; position: sticky; top: 0; backdrop-filter: blur(6px); background: rgba(11,15,20,0.6); padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 10; }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    nav a { margin-left: 16px; font-weight: 500; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; padding: 64px 24px 24px; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); background: rgba(108,195,255,0.12); padding: 6px 10px; border: 1px solid rgba(108,195,255,0.25); border-radius: 999px; }
+    h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.1; margin: 12px 0 8px; }
+    .lead { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); max-width: 60ch; }
+    .cta { display: flex; gap: 12px; margin-top: 18px; }
+    .btn { border: 1px solid rgba(255,255,255,0.15); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); color: var(--text); padding: 10px 14px; border-radius: 12px; font-weight: 600; }
+    .btn.primary { background: linear-gradient(180deg, rgba(108,195,255,0.35), rgba(108,195,255,0.15)); border-color: rgba(108,195,255,0.55); }
+
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+
+    section { padding: 32px 24px; }
+    section h2 { font-size: 20px; letter-spacing: 0.2px; margin: 0 0 12px; color: var(--text); }
+    .muted { color: var(--muted); }
+
+    .projects .item { grid-column: span 6; display: flex; flex-direction: column; gap: 10px; }
+    .item h3 { margin: 0; font-size: 18px; }
+    .pill { display:inline-flex; gap:8px; flex-wrap:wrap }
+    .pill span { font-size:12px; color: var(--muted); border:1px solid rgba(255,255,255,0.12); border-radius:999px; padding:4px 8px }
+
+    .experience .row { grid-column: span 12; display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: start; }
+    .exp-title { font-weight: 600; }
+
+    footer { padding: 40px 24px 64px; color: var(--muted); text-align: center; }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .projects .item { grid-column: span 12; }
+      .experience .row { grid-template-columns: 1fr; }
+      header { position: static; }
+    }
+    /* Simple decorative accent */
+    .orbit { position: relative; border-radius: 16px; min-height: 220px; }
+    .orbit::before { content: ""; position: absolute; inset: -2px; border-radius: 18px; background: conic-gradient(from 180deg, rgba(108,195,255,0.45), rgba(155,255,214,0.35), rgba(108,195,255,0.45)); filter: blur(18px); opacity: 0.25; z-index: -1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Matia Landry</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="tag">Software & Mechatronics • Solar • Automation</div>
+        <h1>Builder of useful systems & clear interfaces.</h1>
+        <p class="lead">I design and implement automation, embedded experiments, and visual tools. Recent work spans HubSpot/Zapier integrations, Android apps, and a single-plant greenhouse with sensor-driven control.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See projects</a>
+          <a class="btn" href="mailto:hello@example.com">Email me</a>
+        </div>
+      </div>
+      <div class="card orbit">
+        <p class="muted">Drop a headshot or hero image here later. For now this block adds a soft glow and keeps balance on the page.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="item card">
+          <h3>Single-Plant Greenhouse</h3>
+          <p class="muted">Portable, solar-powered greenhouse cabinet with ESP-based control, misting, and app telemetry.</p>
+          <div class="pill"><span>ESP32</span><span>FreeRTOS</span><span>Sensors</span><span>Android</span></div>
+          <a href="#" aria-label="Project link">View →</a>
+        </article>
+        <article class="item card">
+          <h3>Roof Face Segmentation</h3>
+          <p class="muted">Experimented with CV/ML to segment roof faces from satellite imagery for solar layout estimation.</p>
+          <div class="pill"><span>CV</span><span>ML</span><span>Roboflow</span></div>
+          <a href="#">View →</a>
+        </article>
+        <article class="item card">
+          <h3>HubSpot ↔ ClickUp Automations</h3>
+          <p class="muted">Workflow glue for proposals, warranties, and handoffs; reduced manual steps and errors.</p>
+          <div class="pill"><span>Zapier</span><span>HubSpot</span><span>ClickUp</span></div>
+          <a href="#">View →</a>
+        </article>
+        <article class="item card">
+          <h3>Android Recommender App</h3>
+          <p class="muted">JWT auth, top/bottom nav, and a clean dashboard; built during co‑op term.</p>
+          <div class="pill"><span>Kotlin</span><span>Android</span></div>
+          <a href="#">View →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="row card">
+          <div>
+            <div class="exp-title">Automation Co‑op</div>
+            <div class="muted">Kuby Renewable Energy • 2025</div>
+          </div>
+          <div>
+            <ul>
+              <li>Shipped Zapier/HubSpot workflows for sales ops; created warranty date logic with HubSpot workflows.</li>
+              <li>Troubleshot SalesRabbit → ClickUp sync issues and implemented resilient fallbacks.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row card">
+          <div>
+            <div class="exp-title">Software Projects</div>
+            <div class="muted">Personal</div>
+          </div>
+          <div>
+            <ul>
+              <li>Embedded systems experiments (STM32/FreeRTOS), Android apps, and AI/CV prototypes.</li>
+              <li>Public code and notes on GitHub.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Best reached by email. Swap in your address and links below.</p>
+      <ul>
+        <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/yourhandle">@yourhandle</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourhandle/">/in/yourhandle</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Matia Landry. Built with plain HTML/CSS and hosted on GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
